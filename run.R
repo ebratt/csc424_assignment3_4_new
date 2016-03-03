@@ -1,6 +1,6 @@
 ##########################
 # PROBLEM 1              #
-#########################
+##########################
 # setup
 # clear the environment
 rm(list=ls())
@@ -285,8 +285,8 @@ load_package("MASS")
 # Box's M: It performs the Box's M-test for homogeneity of covariance matrices 
 # obtained from multivariate normal data according to one classification factor. 
 # The test is based on the chi-square approximation.
-# load_package("biotools")
-# boxM(data[,2:5], grouping=data$species_name)
+load_package("biotools")
+boxM(data[,2:5], grouping=data$species_name)
 # Box's M-test for Homogeneity of Covariance Matrices
 # 
 # data:  data[, -1]
@@ -423,8 +423,8 @@ write.table(round(ld_coefs,3), file=concat(OUTPUT_DIR,'/faculty lda coefficients
 # Box's M: It performs the Box's M-test for homogeneity of covariance matrices 
 # obtained from multivariate normal data according to one classification factor. 
 # The test is based on the chi-square approximation.
-# load_package("biotools")
-# boxM(data[,2:13], grouping=data[,1])
+load_package("biotools")
+boxM(data[,2:13], grouping=data[,1])
 # Box's M test suggests that the variance-covariance matrices are not
 # homegeneous:
 # Box's M-test for Homogeneity of Covariance Matrices
@@ -609,8 +609,8 @@ lda$scaling
 # Box's M: It performs the Box's M-test for homogeneity of covariance matrices 
 # obtained from multivariate normal data according to one classification factor. 
 # The test is based on the chi-square approximation.
-# load_package("biotools")
-# boxM(D[,2:3], grouping=D[,1])
+load_package("biotools")
+boxM(D[,2:3], grouping=D[,1])
 # Box's M test suggests that the variance-covariance matrices are not
 # homegeneous:
 # Box's M-test for Homogeneity of Covariance Matrices
@@ -678,11 +678,9 @@ plotcluster(x=D,
             method="dc",
             clnum=clvecd,
             main="Cluster Plot of Random Data with k=3")
-legend("topleft", legend = paste(lda$lev), pch=16, col=1:5)
 
 plotcluster(x=D[,2:3], 
             clvecd=clvecd,
             method="dc",
             clnum=fit3$cluster,
             main="Cluster Plot of Random Data with k=3")
-legend("topleft", legend = paste(lda$lev), pch=16, col=1:5)
